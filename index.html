@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Калькулятор аренды</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Калькулятор аренды</h1>
+  <form id="rentalForm">
+<div class="style">
+    <label for="cost">Стоимость аренды:</label>
+    <input class="okno" type="number" id="cost" name="cost" required>
+    <br>
+</div>
+<div class="style">
+    <label for="hours">Количество часов аренды:</label>
+    <input class="okno" type="number" id="hours" name="hours" required>
+    <br>
+</div>
+
+<div class="style">
+  <label for="people">Количество людей:</label>
+  <input class="okno" type="number" id="people" name="people" required>
+  <br>
+</div>
+
+    <button class="btn" type="submit">Рассчитать</button>
+  </form>
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
