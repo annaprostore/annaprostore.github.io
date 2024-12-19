@@ -1,0 +1,1129 @@
+@font-face {
+    font-family: 'MyCustomFont3'; 
+    src: url('Alumni_Sans_Pinstripe/AlumniSansPinstripe-Regular.ttf') format('woff2'), /* Поддерживаемые форматы */
+         url('Alumni_Sans_Pinstripe/AlumniSansPinstripe-Regular.ttf') format('woff'),
+         url('Alumni_Sans_Pinstripe/AlumniSansPinstripe-Regular.ttf') format('truetype'); /* Укажите пути к вашим шрифтам */
+    font-weight: normal; /* Обычно normal */
+    font-style: normal; /* Обычно normal */
+  }
+
+  @font-face {
+    font-family: 'MyCustomFont2'; 
+    src: url('Montserrat/Montserrat-VariableFont_wght.ttf') format('woff2'), /* Поддерживаемые форматы */
+         url('Montserrat/Montserrat-VariableFont_wght.ttf') format('woff'),
+         url('Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'); /* Укажите пути к вашим шрифтам */
+    font-weight: normal; /* Обычно normal */
+    font-style: normal; /* Обычно normal */
+  }
+  
+  h3 {
+    font-family: 'MyCustomFont3';
+  }
+
+  h2 {
+    font-family: 'MyCustomFont2';
+  }
+
+    p {
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  ul, li {
+    list-style: none;
+  }
+
+body {
+    margin: 0;
+    font-family: sans-serif; 
+  }
+  
+
+/* главная страница, 1 блок */
+
+.section {
+    background-image: url('img/back_main.jpg');
+    height: 730px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 20px; /* Изменённый паддинг для адаптивности */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Изменено на center для лучшей адаптации */
+    flex-direction: column; /* Изменено на column для вертикального расположения на маленьких экранах */
+}
+
+.section-content {
+    max-width: 90%; /* Максимум 90% ширины родителя */
+    padding: 20px;
+    text-align: center; /* Текст по центру на маленьких экранах */
+}
+
+.section-content h2 {
+    margin: 20px 0; /* Убран левый отступ */
+    font-size: 50px; /* Уменьшен размер шрифта */
+    width: auto; /* Ширина авто для адаптивности */
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+}
+
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .section {
+        height: auto; /* Автоматическая высота */
+        padding: 20px;
+    }
+    .section-content h2 {
+        font-size: 24px;
+    }
+    .button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-content h2 {
+        font-size: 20px;
+    }
+    .button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+
+
+.three-column-block {
+    display: flex;
+    flex-wrap: wrap; /* Разрешает перенос на новую строку при необходимости */
+    justify-content: space-around; /* Равномерно распределяет элементы по ширине */
+  }
+  
+  .three-column-block .column {
+    width: 30%; /* Ширина каждого столбца (30% от родительского элемента) */
+    box-sizing: border-box; /* Учитывает padding и border в ширину элемента */
+    margin-bottom: 20px; /* Отступ снизу между столбцами */
+    padding: 45px; /* Внутренний отступ внутри столбца */
+    text-align: center; /* Центрирует текст внутри столбца */
+  }
+  
+  /* Адаптивный дизайн: */
+  @media (max-width: 768px) { /* При ширине экрана меньше или равной 768px */
+    .three-column-block .column {
+        padding: 5px;
+      width: 48%; /* Ширина каждого столбца на меньших экранах */
+    }
+  }
+  
+  @media (max-width: 500px) { /* При ширине экрана меньше или равной 500px */
+    .three-column-block .column {
+      width: 100%; /* Каждый столбец занимает всю ширину */
+    }
+  }
+  
+  .column a { /* Стиль для ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #4CAF50; /* Зеленый цвет */
+    transition: color 0.3s ease;
+  }
+  
+  .column a:hover {
+    color: black; /* Черный цвет при наведении */
+  }
+  
+  .column h3 { /* Убираем лишний стиль для h3, он теперь наследуется от a */
+    margin-bottom: 5px;
+    font-size: 40px;
+    
+
+  }
+  
+  .column p {
+    font-style: italic;
+    color: black; 
+    opacity: 0.7;
+  }
+  
+  
+  /* Медиа-запросы для адаптивности */
+  @media (max-width: 768px) {
+    .column {
+      flex: 1 0 100%;
+      margin: 10px 0;
+      min-width: auto;
+    }
+  }
+  
+
+/* 2 блок, предложения */
+
+.best {
+    font-size: 40px;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    
+}
+
+.property {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px; /* Увеличиваем минимальную высоту */
+}
+
+.property img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Важно для правильного масштабирования изображения */
+    transition: transform 0.3s ease;
+}
+
+.property:hover img {
+    transform: scale(1.1);
+}
+
+.property-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+}
+
+.property.large {
+    grid-column: span 2;
+}
+
+.property.medium {
+    grid-column: span 1;
+}
+
+.property.small {
+    grid-column: span 1;
+}
+
+/* Медиа-запросы (могут потребовать корректировки) */
+@media (max-width: 992px) {
+    .property-grid {
+        grid-template-columns: 1fr;
+    }
+    .property.large, .property.medium, .property.small {
+        grid-column: 1;
+    }
+}
+
+.property {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex; /* Добавляем flexbox */
+    flex-direction: column; /* Делаем направление столбцом */
+    justify-content: center; /* Центрируем по вертикали */
+    align-items: center; /* Центрируем по горизонтали */
+}
+
+.property-content {
+    /* Удаляем position: absolute; и высоту */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding-top: 120px; /* Добавим немного отступа */
+    padding-left: 20px;
+    
+}
+
+.oval-button {
+    background-color: transparent; /* Прозрачный фон */
+    border: 1px solid white; /* Белый контур */
+    border-radius: 25px / 25px; /* Овальная форма */
+    padding: 2px 25px;
+    color: white; /* Цвет текста */
+    cursor: pointer;
+    transition: border-color 0.3s ease; /* Плавный переход цвета */
+  }
+  
+  .oval-button:hover {
+    border-color: #4CAF50;
+    color: #4CAF50; /* Зеленый цвет */;
+  }
+
+  
+  
+  .property-content p {
+    font-style: italic;
+    opacity: 0.7;
+  }
+  
+  
+  .property-content h3 {
+   font-size: 40px;
+  }
+
+
+  
+
+/* Media query для меньших экранов */
+@media (max-width: 768px) {
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+  .property:nth-child(n+2) {
+    display: none;
+  }
+  .show-more {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+    .d-flex.justify-content-between.align-items-center.mb-4 {
+      flex-direction: column; /* Изменяем направление на вертикальное */
+      align-items: flex-start; /* Выравниваем по левому краю */
+      text-align: center; /* Выравниваем текст влево, если нужно */
+    }
+    .mb-4 {
+      margin-bottom: 20px; /* Добавляем отступ снизу между заголовком и кнопкой */
+    }
+  }
+  
+
+  /* о нас */
+
+  .about-us-section {
+    padding: 50px 0 40px;
+    background-color: #f8f9fa; /* Светло-серый фон */
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #343a40; /* Темно-серый цвет заголовка */
+  }
+  
+  .about-us-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .about-us-text {
+    flex: 1 1 50%; /* Текст занимает 50% ширины */
+  }
+  
+  .about-us-text p {
+    line-height: 1.6;
+    color: #495057; /* Серый цвет текста */
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-text ul {
+    list-style: disc; /* Маркеры списка */
+    padding-left: 20px;
+  }
+  
+  .about-us-text ul li {
+    margin-bottom: 10px;
+  }
+  
+  .about-us-image {
+    flex: 1 1 40%; /* Изображение занимает 40% ширины */
+    position: relative;
+  }
+  
+  .about-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Скругленные углы изображения */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тень на изображении */
+  }
+  
+  
+  /* Адаптивный дизайн: */
+  @media (max-width: 992px) {
+    .about-us-content {
+      flex-direction: column; /* Вертикальное расположение на маленьких экранах */
+      align-items: center;
+      text-align: center;
+    }
+    .about-us-text, .about-us-image {
+      width: 100%;
+     
+      
+    }
+    .section-title {
+      margin-bottom: 30px;
+    }
+
+    .about-us-text p {
+        font-size: 15px;
+    }
+  }
+  
+  /* застройщикам */
+
+  .developer-services {
+    background-image: url(img/zas.jpg); /* Замените на путь к вашей картинке */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px; /* Минимальная высота */
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    padding: 20px;
+    color: white; /* Цвет текста на фоне */
+}
+
+.container {
+    width: 100%;
+    max-width: 1320px; /* Максимальная ширина для центрирования */
+    margin: 0 auto; /* Автоматические отступы для центрирования */
+}
+
+
+.services-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Текст слева */
+}
+
+.text-content {
+    
+    margin-top: 60px;
+    padding: 20px;
+
+}
+
+.text-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .developer-services {
+        min-height: 400px;
+    }
+
+    .services-content {
+        flex-direction: column; /* На маленьких экранах текст сверху, кнопка снизу */
+        align-items: center;
+    }
+    .text-content {
+        text-align: center; /* Центрирование текста на маленьких экранах */
+    }
+
+    .text-content h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* футер */
+
+.footer {
+    color: #eee;
+    padding: 25px 0 1px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  
+  .container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Ключевое изменение: равномерное распределение */
+  }
+  
+  .columns {
+    display: flex;
+    width: 100%; /* Занимаем всю ширину контейнера */
+    margin-bottom: 20px;
+  }
+  
+  .column_footer {
+    flex: 1; /* Каждая колонка занимает равную часть доступного пространства */
+    margin: 0 10px; /* Небольшой отступ между колонками */
+    box-sizing: border-box; /* Важно: включает padding и border в ширину элемента */
+    text-align: center; /* Центрируем текст в колонках */
+  }
+
+  .column_footer a {
+    color: #3e8e41;
+    text-decoration: none;
+  }
+  
+  .column_footer a:hover {
+    color: white;
+  }
+
+  .column_footer h3 {
+    font-size: 40px;
+  }
+  
+  h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  
+  /* ... (стили для списков, ссылок, изображений остаются теми же) ... */
+  
+  .copyright {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  
+  /* Адаптивный дизайн */
+  @media (max-width: 768px) {
+    .columns {
+      flex-direction: column;
+      align-items: center;
+    }
+    .column {
+      flex-basis: 100%;
+      margin: 10px 0; /* Отступы сверху и снизу */
+    }
+
+    .column_footer {
+        margin-bottom: 30px;
+    }
+
+    .column_footer h3 {
+        font-size: 35px;
+    }
+  }
+
+  /* 2 страница */
+/* Styles for larger screens (desktops) */
+.about {
+    margin: 55px 0 55px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-text {
+    width: 700px;
+}
+
+.about-text a {
+    margin-top: 10px;
+}
+
+.about-text h2 {
+    margin-bottom: 25px;
+}
+
+
+.team {
+    margin-top: 30px;
+    background-color: #f9f9f9; 
+    padding: 30px 0; 
+}
+
+.team h2 {
+    text-align: center; 
+    margin: 30px 0; 
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.team-member {
+    width: 300px; 
+    margin: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    overflow: hidden; 
+    background-color: #fff; 
+    text-align: center; 
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    border-radius: 5px 5px 0 0; 
+}
+
+.team-member h3 {
+    margin: 5px 0 0;
+    font-size: 1.8em; /* Slightly reduced size */
+}
+
+.team-member p {
+    margin-bottom: 10px;
+    font-style: italic; 
+}
+
+
+/* Responsive Styles - Media Queries */
+@media (max-width: 992px) { /* Tablet and smaller */
+    .about {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: center; /* Center the items */
+    }
+    .about-text {
+        width: 100%;
+        margin-bottom: 20px; /* Add space between text and image */
+    }
+    .about-image {
+        width: 100%; /* Image takes full width */
+        margin-bottom: 20px;
+    }
+    .about-image img {
+        max-width: 100%;
+    }
+
+
+    .team-members {
+        justify-content: center; /* Center items horizontally */
+    }
+    .team-member {
+        width: calc(50% - 20px); /* Two columns on medium screens */
+        margin: 10px;
+    }
+    .team h2 { margin: 15px 0; } /* Reduced margin for the title */
+}
+
+@media (max-width: 768px) { /* Smaller tablets and larger phones */
+   .team-member {
+        width: calc(100% - 20px); /* One column per row */
+    }
+}
+
+@media (max-width: 576px) { /* Smaller phones */
+  .team-member {
+        width: calc(100% - 20px); /* One column per row */
+        margin: 10px;
+  }
+  .team-member h3 {
+    font-size: 1.5em; /*Further reduce font size */
+  }
+}
+
+/* 3 страница */
+
+.buy-apartment {
+    background-image: url("img/flat.jpg"); /* Замените на ваше изображение */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0; /* Вертикальные отступы */
+    color: white; /* Цвет текста */
+    text-align: center; /* Текст по центру */
+    margin-bottom: 70px;
+}
+
+.main-image {
+  filter: brightness(0.7); /* Приглушаем яркость изображения */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Помещаем изображение под другие элементы */
+}
+
+.room-buttons {
+    display: flex;
+    gap: 10px; /* Расстояние между кнопками */
+}
+
+.room-button {
+    flex: 1; /* Кнопки занимают одинаковую ширину */
+}
+
+.room-buttons .room-button {
+    color: white; /* Цвет текста по умолчанию */
+    /* Цвет фона по умолчанию - синий Bootstrap */
+    border-color: #ffffff; /* Цвет границы */
+}
+
+.room-buttons .room-button:hover {
+    color: white; /* Цвет текста при наведении */
+    background-color: #4CAF50; /* Цвет фона при наведении */
+    border-color: #4CAF50; /* Цвет границы при наведении */
+}
+
+.form-label {
+    margin-top: 30px;
+}
+
+.form_sale button {
+    margin-top: 15px;
+}
+
+.row>* {
+    margin-top: 0;
+}
+
+.apartment-blocks {
+    margin-top: 40px; /* Отступ сверху */
+    margin-bottom: 40px;
+}
+
+.apartment-block {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Более мягкая тень */
+    transition: box-shadow 0.3s ease; /* Плавное изменение тени при наведении */
+    margin: 35px 0px;
+}
+
+.apartment-block:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Более выраженная тень при наведении */
+    transform: translateY(-2px); /* Небольшое поднятие при наведении */
+}
+
+.apartment-block img {
+    padding: 2%;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.apartment-block .card-body {
+    padding: 15px;
+}
+
+.apartment-block .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.apartment-block .card-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0; /* Убираем лишний отступ снизу */
+}
+
+.apartment-block .card-text:last-child {
+  margin-bottom: 0; /* Убираем отступ снизу у последнего текста */
+}
+
+/* 4 страница */
+
+.rent-apartment {
+    background-image: url("img/image12.jpg"); /* Замените на ваше изображение */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0; /* Вертикальные отступы */
+    color: white; /* Цвет текста */
+    text-align: center; /* Текст по центру */
+    margin-bottom: 70px;
+}
+
+/* 5 страница */ 
+
+.break_usluga {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    justify-content: space-around;
+  }
+
+  .break-content h2 {
+    margin-top: 25px;
+  }
+  
+  .flex-container {
+    display: flex;
+    gap: 20px; /* Пробел между блоками */
+  }
+  
+  
+  .service-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd; /* Тонкая граница */
+    border-radius: 5px;
+    background-color: #fff; /* Белый фон */
+  }
+  
+  .service-item a {
+    text-decoration: none;
+    color: #343a40; /* Темно-серый цвет ссылок */
+    display: block; /* Превращаем ссылку в блок */
+  }
+  
+  .service-item a:hover {
+    text-decoration: underline;
+    color: #4CAF50; /* Синий цвет при наведении */
+  }
+  
+  .banner {
+    flex: 1 1 40%; /* Занимаем 40% ширины */
+    max-width: 600px; /* Максимальная ширина баннера */
+  }
+  
+  .banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Скругление углов изображения */
+  }
+  
+  /* Отзывчивый дизайн */
+  @media (max-width: 768px) {
+    .break_usluga {
+      flex-direction: column; /* Блоки располагаются вертикально */
+      align-items: center; /* Центрирование блоков */
+    }
+    .service-list, .banner {
+      width: 100%; /* Занимаем 100% ширины */
+      margin-bottom: 20px; /* Отступ снизу */
+    }
+
+    .flex-container {
+           display: flex;
+    flex-direction: column;
+    }
+
+ 
+  }
+  
+
+  /* 6 страница */
+
+  .contact_content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center; /* Центрируем заголовок */
+}
+
+.contact_content {
+    width: 100%;
+}
+
+.contact-form {
+    flex: 1 0 450px; /* Минимальная ширина формы */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Важно для учета padding в ширине */
+}
+
+.contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+.store-info {
+    flex: 1 0 300px; /* Минимальная ширина блока с информацией */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.store-info .contact-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.store-info .contact-row span {
+    flex: 1;
+}
+
+
+.store-info #map {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Отзывчивость */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact_content > div {
+        width: 100%;
+    }
+}
+
+.contact-form {
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 30px; /* Padding around the form */
+    max-width: 800px; /* Maximum width of the form */
+    margin: 0 auto; /* Center the form */
+}
+
+.contact-form label {
+    display: block; /* Labels take up the full width */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Dark grey text for labels */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+.contact-form input[type="checkbox"] {
+    margin-right: 5px; /* Space between checkbox and label */
+    vertical-align: middle; /* Vertically align checkbox and text */
+}
+
+.contact-form a { /* Style the link in the checkbox label */
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+}
+
+.contact-form a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.contact-form button[type="submit"] {
+    background-color: #4CAF50; /* Green submit button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    width: 100%; /* Button takes up full width */
+    font-size: 16px; /* Adjust button text size as needed */
+    margin-top: 15px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* Responsive Design (adjust for smaller screens) */
+@media (max-width: 400px) {
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+.label_contact {
+    display: flex;
+    align-items: center;
+}
+
+
+/* style.css */
+.contact-section {
+    margin-top: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column; /* Stack form fields vertically */
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem; /* Adjust spacing */
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 1rem; /* Adjust spacing */
+}
+
+.contact-form button {
+    margin-top: 1rem; /* Add space above the button */
+}
+
+.store-info {
+    text-align: left;
+}
+
+.contact-row {
+    margin-bottom: 0.5rem;
+}
+
+.store-info #map {
+    margin-bottom: 1rem; /* Adjust spacing */
+}
+
+.social-media a {
+    margin: 0 0.5rem; /* Add spacing between social media icons */
+}
+
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; /* Stack form and info on smaller screens */
+    }
+    .contact-form, .store-info {
+        width: 100%;
+    }
+    .footer .row {
+        flex-direction: column; /* Stack footer items vertically */
+    }
+    .footer .col-md-4 {
+        width: 100%;
+        margin-bottom: 20px; /* add margin between columns */
+    }
+
+}
+
+/* style.css */
+
+/* General styles */
+.contact-section {
+    margin-top: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 1rem;
+}
+
+.contact-form button {
+    margin-top: 1rem;
+}
+
+
+.store-info {
+    text-align: left;
+}
+
+.contact-row {
+    margin-bottom: 0.5rem;
+}
+
+.store-info #map {
+    margin-bottom: 1rem;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    .contact-section {
+        flex-direction: column; /* Stack form and info on smaller screens */
+    }
+    .contact-form, .store-info {
+        width: 100%;
+    }
+    .footer .row {
+        flex-direction: column;
+    }
+    .footer .col-md-4 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .contact-form {
+        max-width: 100%; /* Allow form to take full width */
+        box-sizing: border-box; /* To avoid horizontal scroll */
+    }
+    .store-info {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+
+.contact_contents h2 {
+    margin-top: 25px;
+}
